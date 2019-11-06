@@ -34,17 +34,17 @@ let menuItems = [
   
 */
 
-function createMenu(menuArray){
- const menuButton = document.querySelector('.menu-button');
+function createMenu(menuArray) {
+  
+  const menuButton = document.querySelector('.menu-button');
   const menu = document.createElement('div');
   const list = document.createElement('ul');
 
   menuButton.appendChild(menu);
   menu.appendChild(list);
   
-  menu.classList.add('menu');
-  // menu.classList.toggle('menu--open');
-
+  menu.classList.add('menu');  
+  
   menuArray.forEach(element => {
     const menuLi = document.createElement('li')
     menuLi.textContent = element;
@@ -56,9 +56,10 @@ function createMenu(menuArray){
 }
 
 const menuButton = document.querySelector('.menu-button');
-const newMenu= createMenu(menuItems);
+
+const newMenu = createMenu(menuItems);
 
 menuButton.addEventListener('click' , ()=> {
-  const coolMenu= document.querySelector('.menu');
+  const coolMenu = document.querySelector('.menu');
   coolMenu.classList.toggle('menu--open');
 })
