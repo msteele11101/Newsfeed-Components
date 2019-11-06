@@ -112,3 +112,55 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+function createComponent(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const articles = document.querySelector('.articles');
+  const article = document.createElement('div');
+  const artTitle = document.createElement('h2');
+  const Articledate = document.createElement('p');
+  const artFirstp = document.createElement('p');
+  const artSecondp = document.createElement('p');
+  const artThirdp = document.createElement('p');
+  const artBtn = document.createElement ('div');
+  
+
+  articles.appendChild(article);
+  article.appendChild(artTitle);
+  article.appendChild(Articledate);
+  article.appendChild(artFirstp);
+  article.appendChild(artSecondp);
+  article.appendChild(artThirdp);
+  article.appendChild(artBtn);
+
+
+  /// set class names
+  article.classList.add('article')
+  Articledate.classList.add('date');
+  artBtn.classList.add('expandButton');
+ 
+  
+  
+/// adding content here
+  artTitle.textContent = title;
+  Articledate.textContent = date;
+  artFirstp.textContent = firstParagraph;
+  artSecondp.textContent = secondParagraph;
+  artThirdp.textContent = thirdParagraph;
+
+// functionality ~~~
+article.addEventListener('click', () =>{
+  article.classList.toggle("article-open");
+  
+});
+
+
+
+return articles;
+
+
+}
+
+data.forEach ( data => createComponent (data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+
+
